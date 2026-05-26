@@ -1,375 +1,521 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Energy Fields</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<title>Campos Energéticos • O Universo Vibra</title>
 
-    body{
-      background:#050816;
-      color:white;
-      overflow-x:hidden;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    /* BACKGROUND */
-    body::before{
-      content:"";
-      position:fixed;
-      width:100%;
-      height:100%;
-      background:
-      radial-gradient(circle at top left, rgba(0,255,255,0.15), transparent 30%),
-      radial-gradient(circle at bottom right, rgba(140,0,255,0.2), transparent 35%),
-      radial-gradient(circle at center, rgba(0,150,255,0.1), transparent 45%);
-      z-index:-1;
-    }
+<style>
 
-    header{
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:20px;
-      position:relative;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
-    .hero{
-      max-width:900px;
-      animation:fade 2s ease;
-    }
+body{
+font-family:'Poppins',sans-serif;
+background:#03010a;
+overflow-x:hidden;
+color:white;
+}
 
-    .hero h1{
-      font-size:5rem;
-      margin-bottom:20px;
-      background:linear-gradient(90deg,#00e5ff,#9d4dff,#00ffcc);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
+/* FUNDO MÍSTICO */
 
-    .hero p{
-      font-size:1.3rem;
-      line-height:1.8;
-      color:#d8d8d8;
-    }
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-10;
+background:
+radial-gradient(circle at top left,#40106b 0%,transparent 30%),
+radial-gradient(circle at bottom right,#00d9ff22 0%,transparent 35%),
+radial-gradient(circle at center,#6f00ff22 0%,transparent 45%),
+linear-gradient(to bottom,#03010a,#090017,#03010a);
+}
 
-    .btn{
-      display:inline-block;
-      margin-top:35px;
-      padding:15px 35px;
-      border-radius:50px;
-      text-decoration:none;
-      background:linear-gradient(90deg,#00e5ff,#8a2be2);
-      color:white;
-      font-weight:bold;
-      transition:0.4s;
-      box-shadow:0 0 20px rgba(0,255,255,0.4);
-    }
+/* ESTRELAS */
 
-    .btn:hover{
-      transform:scale(1.05);
-      box-shadow:0 0 35px rgba(0,255,255,0.8);
-    }
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-9;
+overflow:hidden;
+}
 
-    section{
-      padding:100px 10%;
-    }
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:float linear infinite;
+opacity:.8;
+}
 
-    .title{
-      font-size:3rem;
-      margin-bottom:50px;
-      text-align:center;
-      background:linear-gradient(90deg,#00ffff,#bb86fc);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
+@keyframes float{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-100vh);
+}
+}
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px;
-    }
+/* HEADER */
 
-    .card{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:25px;
-      padding:30px;
-      transition:0.4s;
-      backdrop-filter:blur(10px);
-      box-shadow:0 0 25px rgba(0,0,0,0.3);
-    }
+header{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+position:relative;
+}
 
-    .card:hover{
-      transform:translateY(-10px);
-      border-color:#00ffff;
-      box-shadow:0 0 30px rgba(0,255,255,0.3);
-    }
+.hero{
+max-width:1000px;
+animation:fade 2s ease;
+}
 
-    .card h3{
-      font-size:1.8rem;
-      margin-bottom:20px;
-      color:#00ffff;
-    }
+.hero h1{
+font-family:'Cinzel',serif;
+font-size:6rem;
+line-height:1.1;
+margin-bottom:30px;
+background:linear-gradient(90deg,#ffffff,#b26dff,#00e1ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 0 25px rgba(255,255,255,.15);
+}
 
-    .card p{
-      line-height:1.7;
-      color:#ddd;
-    }
+.hero p{
+font-size:1.3rem;
+line-height:2;
+color:#d9d9d9;
+max-width:850px;
+margin:auto;
+}
 
-    .about{
-      max-width:1000px;
-      margin:auto;
-      text-align:center;
-      line-height:2;
-      font-size:1.2rem;
-      color:#ddd;
-    }
+.hero-btns{
+margin-top:40px;
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
 
-    footer{
-      padding:40px;
-      text-align:center;
-      background:#03050d;
-      border-top:1px solid rgba(255,255,255,0.08);
-    }
+.btn{
+padding:17px 40px;
+border-radius:60px;
+text-decoration:none;
+font-weight:600;
+transition:.4s;
+font-size:1rem;
+}
 
-    footer p{
-      color:#999;
-    }
+.btn-primary{
+background:linear-gradient(90deg,#7b2fff,#00d9ff);
+color:white;
+box-shadow:0 0 35px rgba(0,217,255,.4);
+}
 
-    @keyframes fade{
-      from{
-        opacity:0;
-        transform:translateY(30px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
+.btn-primary:hover{
+transform:translateY(-5px) scale(1.05);
+box-shadow:0 0 45px rgba(0,217,255,.7);
+}
 
-    /* Floating particles */
+.btn-outline{
+border:1px solid rgba(255,255,255,.25);
+color:white;
+backdrop-filter:blur(10px);
+}
 
-    .particle{
-      position:fixed;
-      border-radius:50%;
-      background:rgba(0,255,255,0.4);
-      animation:float linear infinite;
-      z-index:-1;
-    }
+.btn-outline:hover{
+background:white;
+color:#05010d;
+}
 
-    @keyframes float{
-      from{
-        transform:translateY(100vh);
-      }
-      to{
-        transform:translateY(-10vh);
-      }
-    }
+/* SECTIONS */
 
-  </style>
+section{
+padding:120px 10%;
+position:relative;
+}
+
+.section-title{
+font-family:'Cinzel',serif;
+font-size:4rem;
+text-align:center;
+margin-bottom:30px;
+background:linear-gradient(90deg,#ffffff,#b26dff,#00e1ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.section-subtitle{
+text-align:center;
+max-width:850px;
+margin:0 auto 70px;
+line-height:2;
+color:#d3d3d3;
+font-size:1.1rem;
+}
+
+/* CARDS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+}
+
+.card{
+position:relative;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+padding:35px;
+border-radius:30px;
+overflow:hidden;
+transition:.5s;
+backdrop-filter:blur(15px);
+}
+
+.card::before{
+content:"";
+position:absolute;
+width:180px;
+height:180px;
+background:radial-gradient(circle,#7b2fff66,transparent 70%);
+top:-50px;
+right:-50px;
+}
+
+.card:hover{
+transform:translateY(-12px);
+border-color:#00e1ff;
+box-shadow:
+0 0 30px rgba(0,225,255,.25),
+0 0 60px rgba(123,47,255,.15);
+}
+
+.card h3{
+font-size:1.8rem;
+margin-bottom:20px;
+color:#00e1ff;
+font-family:'Cinzel',serif;
+}
+
+.card p{
+line-height:1.9;
+color:#d9d9d9;
+}
+
+/* CHAKRAS */
+
+.chakras{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:70px;
+}
+
+.chakra{
+width:120px;
+height:120px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-weight:bold;
+text-align:center;
+padding:10px;
+animation:pulse 4s infinite;
+box-shadow:0 0 30px rgba(255,255,255,.15);
+}
+
+@keyframes pulse{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.08);
+}
+100%{
+transform:scale(1);
+}
+}
+
+.c1{background:#ff0000;}
+.c2{background:#ff7b00;}
+.c3{background:#ffd500;color:#111;}
+.c4{background:#00ff95;color:#111;}
+.c5{background:#00c3ff;}
+.c6{background:#6f00ff;}
+.c7{background:#ffffff;color:#111;}
+
+/* QUOTE */
+
+.quote{
+max-width:900px;
+margin:auto;
+text-align:center;
+font-size:2rem;
+line-height:1.8;
+font-family:'Cinzel',serif;
+color:#f2f2f2;
+padding:60px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+border-radius:35px;
+backdrop-filter:blur(15px);
+}
+
+/* FOOTER */
+
+footer{
+padding:50px 20px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+background:#05010d;
+}
+
+footer p{
+color:#aaa;
+line-height:2;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3.5rem;
+}
+
+.section-title{
+font-size:2.7rem;
+}
+
+.quote{
+font-size:1.4rem;
+padding:40px 25px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
-  <!-- PARTICLES -->
-  <script>
-    for(let i=0;i<40;i++){
-      const p=document.createElement("div");
-      p.classList.add("particle");
+<div class="bg"></div>
 
-      let size=Math.random()*6+2;
+<div class="stars" id="stars"></div>
 
-      p.style.width=size+"px";
-      p.style.height=size+"px";
-      p.style.left=Math.random()*100+"vw";
-      p.style.animationDuration=(Math.random()*20+10)+"s";
-      p.style.opacity=Math.random();
+<header>
 
-      document.body.appendChild(p);
-    }
-  </script>
+<div class="hero">
 
-  <!-- HERO -->
+<h1>
+Campos<br>
+Energéticos
+</h1>
 
-  <header>
-    <div class="hero">
-      <h1>Energy Fields</h1>
+<p>
+Explore os mistérios invisíveis do universo, das vibrações espirituais,
+das frequências da consciência, dos chakras, da energia humana
+e das forças ocultas que conectam toda a existência.
+</p>
 
-      <p>
-        Explore the invisible energies that shape reality, consciousness,
-        emotions, nature, and the universe itself.
-        Discover spiritual frequencies, electromagnetic fields,
-        human aura layers, quantum vibrations, and the energetic structure
-        behind existence.
-      </p>
+<div class="hero-btns">
+<a href="#campos" class="btn btn-primary">Explorar</a>
+<a href="#chakras" class="btn btn-outline">Chakras</a>
+</div>
 
-      <a href="#fields" class="btn">Explore Fields</a>
-    </div>
-  </header>
+</div>
 
-  <!-- ABOUT -->
+</header>
 
-  <section>
-    <h2 class="title">What Are Energy Fields?</h2>
+<section>
 
-    <div class="about">
-      <p>
-        Energy fields are invisible structures or frequencies believed to
-        exist around all living beings, objects, and environments.
-        In science, energy fields include electromagnetic, gravitational,
-        and quantum fields.
-      </p>
+<h2 class="section-title">
+O Que São Campos Energéticos?
+</h2>
 
-      <br>
+<p class="section-subtitle">
+Campos energéticos são estruturas invisíveis presentes em toda a realidade.
+Na ciência, aparecem como campos gravitacionais, eletromagnéticos e quânticos.
+Na espiritualidade, representam a aura, as vibrações emocionais,
+a consciência universal e a energia vital que conecta todos os seres.
+</p>
 
-      <p>
-        In spirituality and metaphysics, energy fields are associated with
-        aura layers, chakras, vibrations, emotional frequencies,
-        consciousness, and universal life force energy.
-      </p>
+</section>
 
-      <br>
+<section id="campos">
 
-      <p>
-        Many traditions believe everything in existence vibrates at a
-        certain frequency, and that thoughts, emotions, and intentions
-        can influence energetic reality.
-      </p>
-    </div>
-  </section>
+<h2 class="section-title">
+Principais Campos
+</h2>
 
-  <!-- ENERGY FIELDS -->
+<p class="section-subtitle">
+Cada frequência possui uma função diferente no universo e dentro do ser humano.
+Descubra algumas das energias mais estudadas na ciência e no misticismo.
+</p>
 
-  <section id="fields">
+<div class="grid">
 
-    <h2 class="title">Types of Energy Fields</h2>
+<div class="card">
+<h3>Campo Eletromagnético</h3>
+<p>
+Responsável pela eletricidade, magnetismo e luz.
+Tudo que possui carga elétrica gera um campo invisível ao redor de si.
+O próprio coração humano produz um poderoso campo eletromagnético.
+</p>
+</div>
 
-    <div class="cards">
+<div class="card">
+<h3>Aura Humana</h3>
+<p>
+A aura é considerada um campo energético que envolve o corpo.
+Suas cores representam estados emocionais, espirituais e mentais,
+refletindo a vibração interna de cada pessoa.
+</p>
+</div>
 
-      <div class="card">
-        <h3>Electromagnetic Field</h3>
+<div class="card">
+<h3>Campo Quântico</h3>
+<p>
+A física quântica sugere que toda matéria nasce de campos invisíveis.
+As partículas seriam apenas manifestações temporárias dessas energias fundamentais.
+</p>
+</div>
 
-        <p>
-          One of the fundamental fields in physics.
-          It surrounds electrically charged particles and is responsible
-          for electricity, magnetism, light, radio waves,
-          and many natural forces in the universe.
-        </p>
-      </div>
+<div class="card">
+<h3>Frequências Emocionais</h3>
+<p>
+Emoções possuem frequências vibracionais.
+Amor, paz e gratidão vibram em níveis elevados,
+enquanto medo e raiva possuem frequências mais densas.
+</p>
+</div>
 
-      <div class="card">
-        <h3>Human Aura</h3>
+<div class="card">
+<h3>Consciência Universal</h3>
+<p>
+A ideia de que todas as consciências estão conectadas por uma rede energética universal,
+criando uma ligação invisível entre todos os seres vivos.
+</p>
+</div>
 
-        <p>
-          The aura is believed to be an energetic field surrounding
-          the human body. Different colors are associated with emotions,
-          personality, spiritual state, and energetic balance.
-        </p>
-      </div>
+<div class="card">
+<h3>Energia Espiritual</h3>
+<p>
+Diversas tradições acreditam em uma energia vital presente no universo:
+Chi, Prana, Mana e Força Vital são alguns dos nomes dados a essa energia ancestral.
+</p>
+</div>
 
-      <div class="card">
-        <h3>Quantum Field</h3>
+</div>
 
-        <p>
-          Quantum field theory suggests that particles are excitations
-          of underlying fields existing everywhere in space.
-          Matter itself emerges from energetic interactions.
-        </p>
-      </div>
+</section>
 
-      <div class="card">
-        <h3>Chakra Energy</h3>
+<section id="chakras">
 
-        <p>
-          Chakras are energy centers in the body according to ancient
-          spiritual traditions. Each chakra governs emotions,
-          consciousness, intuition, communication, and physical balance.
-        </p>
-      </div>
+<h2 class="section-title">
+Os 7 Chakras
+</h2>
 
-      <div class="card">
-        <h3>Morphic Fields</h3>
+<p class="section-subtitle">
+Segundo antigas tradições espirituais, os chakras são centros de energia
+responsáveis pelo equilíbrio físico, emocional e espiritual.
+</p>
 
-        <p>
-          A controversial theory proposing that memory and behavior patterns
-          are influenced by invisible collective energy fields shared across
-          living systems and species.
-        </p>
-      </div>
+<div class="chakras">
 
-      <div class="card">
-        <h3>Gravitational Field</h3>
+<div class="chakra c1">Raiz</div>
+<div class="chakra c2">Sacral</div>
+<div class="chakra c3">Plexo</div>
+<div class="chakra c4">Coração</div>
+<div class="chakra c5">Garganta</div>
+<div class="chakra c6">Terceiro Olho</div>
+<div class="chakra c7">Coroa</div>
 
-        <p>
-          The force field generated by mass that attracts objects together.
-          Gravity shapes planets, stars, galaxies, and the structure
-          of the cosmos itself.
-        </p>
-      </div>
+</div>
 
-      <div class="card">
-        <h3>Emotional Frequencies</h3>
+</section>
 
-        <p>
-          Some spiritual theories suggest emotions emit energetic frequencies.
-          States like love, gratitude, and peace are considered high-frequency
-          energies, while fear and anger are lower frequencies.
-        </p>
-      </div>
+<section>
 
-      <div class="card">
-        <h3>Universal Consciousness</h3>
+<div class="quote">
+“Tudo no universo é energia.
+Mude sua frequência e você mudará sua realidade.”
+</div>
 
-        <p>
-          The idea that consciousness is interconnected through a universal
-          energetic network linking all beings and forms of existence.
-        </p>
-      </div>
+</section>
 
-    </div>
-  </section>
+<footer>
 
-  <!-- FINAL SECTION -->
+<p>
+✨ Campos Energéticos • Universo Vibracional ✨
+</p>
 
-  <section>
-    <h2 class="title">The Universe is Vibration</h2>
+<p>
+Criado com estética mística, galáctica e espiritual.
+</p>
 
-    <div class="about">
-      <p>
-        Ancient philosophies and modern theories often converge on the idea
-        that reality is fundamentally energetic in nature.
-      </p>
+</footer>
 
-      <br>
+<script>
 
-      <p>
-        From atoms vibrating in quantum fields to spiritual beliefs about
-        consciousness and aura energy, the concept of energy fields continues
-        to inspire science, mysticism, and human curiosity.
-      </p>
+/* ESTRELAS */
 
-      <br>
+const stars = document.getElementById("stars");
 
-      <p>
-        Everything moves. Everything vibrates. Everything is energy.
-      </p>
-    </div>
-  </section>
+for(let i=0;i<150;i++){
 
-  <footer>
-    <p>
-      Energy Fields Website • Created with cosmic energy ✨
-    </p>
-  </footer>
+const star = document.createElement("div");
+
+star.classList.add("star");
+
+let size = Math.random()*3;
+
+star.style.width = size + "px";
+star.style.height = size + "px";
+
+star.style.left = Math.random()*100 + "vw";
+star.style.top = Math.random()*100 + "vh";
+
+star.style.animationDuration = (Math.random()*20+10)+"s";
+
+star.style.opacity = Math.random();
+
+stars.appendChild(star);
+
+}
+
+</script>
 
 </body>
 </html>
