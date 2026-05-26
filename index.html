@@ -288,6 +288,16 @@ box-shadow:
 transition:.3s;
 }
 
+.chakra-image{
+width:100%;
+max-width:550px;
+height:320px;
+object-fit:cover;
+border-radius:25px;
+margin-bottom:30px;
+box-shadow:0 0 35px rgba(0,0,0,.4);
+}
+
 .chakra-info h3{
 font-size:2rem;
 margin-bottom:20px;
@@ -368,6 +378,10 @@ padding:40px 25px;
 width:90px;
 height:90px;
 font-size:.9rem;
+}
+
+.chakra-image{
+height:220px;
 }
 
 }
@@ -504,9 +518,8 @@ Os 7 Chakras
 </h2>
 
 <p class="section-subtitle">
-Segundo antigas tradições espirituais, os chakras são centros de energia
-responsáveis pelo equilíbrio físico, emocional e espiritual.
-Clique em cada chakra para descobrir seu significado.
+Clique em cada chakra para descobrir seu significado espiritual,
+emocional e energético.
 </p>
 
 <div class="chakras">
@@ -514,7 +527,8 @@ Clique em cada chakra para descobrir seu significado.
 <div class="chakra c1"
 onclick="showChakra(
 'Chakra Raiz',
-'Representa segurança, sobrevivência, estabilidade e conexão com a Terra. Quando equilibrado, traz sensação de proteção e firmeza emocional.'
+'Representa segurança, sobrevivência, estabilidade e conexão com a Terra.',
+'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop'
 )">
 Raiz
 </div>
@@ -522,7 +536,8 @@ Raiz
 <div class="chakra c2"
 onclick="showChakra(
 'Chakra Sacral',
-'Relaciona-se às emoções, criatividade, prazer e energia emocional. Está ligado à sensualidade e expressão dos sentimentos.'
+'Relaciona-se às emoções, criatividade, prazer e energia emocional.',
+'https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=80&w=1200&auto=format&fit=crop'
 )">
 Sacral
 </div>
@@ -530,7 +545,8 @@ Sacral
 <div class="chakra c3"
 onclick="showChakra(
 'Chakra Plexo Solar',
-'É o centro do poder pessoal, autoestima e confiança. Desperta motivação, coragem e força interior.'
+'É o centro do poder pessoal, autoestima e confiança.',
+'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop'
 )">
 Plexo
 </div>
@@ -538,7 +554,8 @@ Plexo
 <div class="chakra c4"
 onclick="showChakra(
 'Chakra do Coração',
-'Representa amor, compaixão, empatia e conexão emocional. É considerado a ponte energética entre corpo e espírito.'
+'Representa amor, compaixão, empatia e conexão emocional.',
+'https://images.unsplash.com/photo-1510784722466-f2aa9c52fff6?q=80&w=1200&auto=format&fit=crop'
 )">
 Coração
 </div>
@@ -546,7 +563,8 @@ Coração
 <div class="chakra c5"
 onclick="showChakra(
 'Chakra da Garganta',
-'Relacionado à comunicação, verdade e expressão pessoal. Ajuda na clareza e autenticidade.'
+'Relacionado à comunicação, verdade e expressão pessoal.',
+'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop'
 )">
 Garganta
 </div>
@@ -554,7 +572,8 @@ Garganta
 <div class="chakra c6"
 onclick="showChakra(
 'Chakra do Terceiro Olho',
-'Associado à intuição, percepção espiritual e consciência superior. Representa visão interior e sabedoria.'
+'Associado à intuição, percepção espiritual e consciência superior.',
+'https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=1200&auto=format&fit=crop'
 )">
 Terceiro Olho
 </div>
@@ -562,7 +581,8 @@ Terceiro Olho
 <div class="chakra c7"
 onclick="showChakra(
 'Chakra da Coroa',
-'É o chakra da conexão espiritual e consciência universal. Relaciona-se ao despertar espiritual.'
+'É o chakra da conexão espiritual e consciência universal.',
+'https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=1200&auto=format&fit=crop'
 )">
 Coroa
 </div>
@@ -570,6 +590,13 @@ Coroa
 </div>
 
 <div class="chakra-info" id="chakraInfo">
+
+<img
+id="chakraImage"
+class="chakra-image"
+src="https://images.unsplash.com/photo-1518562180175-34a163b1a9a6?q=80&w=1200&auto=format&fit=crop"
+alt="chakra"
+>
 
 <h3 id="chakraTitle">
 Clique em um Chakra
@@ -634,11 +661,13 @@ stars.appendChild(star);
 
 /* CHAKRAS */
 
-function showChakra(title, text){
+function showChakra(title, text, image){
 
 document.getElementById("chakraTitle").innerText = title;
 
 document.getElementById("chakraText").innerText = text;
+
+document.getElementById("chakraImage").src = image;
 
 document.getElementById("chakraInfo").style.transform = "scale(0.97)";
 
