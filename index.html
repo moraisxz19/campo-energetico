@@ -1,4 +1,501 @@
-<!-- SUBSTITUA APENAS A PARTE DOS CHAKRAS POR ESTA -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Campos Energéticos • Universo Vibracional</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#03010a;
+color:white;
+overflow-x:hidden;
+}
+
+/* FUNDO */
+
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-5;
+background:
+radial-gradient(circle at top left,#51118f 0%,transparent 30%),
+radial-gradient(circle at bottom right,#00d9ff22 0%,transparent 35%),
+radial-gradient(circle at center,#6f00ff22 0%,transparent 45%),
+linear-gradient(to bottom,#03010a,#090017,#03010a);
+}
+
+/* ESTRELAS */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-4;
+overflow:hidden;
+}
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+opacity:.8;
+animation:float linear infinite;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-100vh);
+}
+}
+
+/* HEADER */
+
+header{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero{
+max-width:1000px;
+animation:fade 2s ease;
+}
+
+.hero h1{
+font-family:'Cinzel',serif;
+font-size:6rem;
+line-height:1.1;
+margin-bottom:30px;
+background:linear-gradient(90deg,#ffffff,#b26dff,#00e1ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 0 25px rgba(255,255,255,.2);
+}
+
+.hero p{
+font-size:1.3rem;
+line-height:2;
+color:#dddddd;
+max-width:850px;
+margin:auto;
+}
+
+.hero-buttons{
+margin-top:40px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:17px 40px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:.4s;
+font-size:1rem;
+}
+
+.btn-primary{
+background:linear-gradient(90deg,#7b2fff,#00d9ff);
+color:white;
+box-shadow:0 0 35px rgba(0,217,255,.4);
+}
+
+.btn-primary:hover{
+transform:translateY(-5px) scale(1.05);
+box-shadow:0 0 45px rgba(0,217,255,.7);
+}
+
+.btn-outline{
+border:1px solid rgba(255,255,255,.25);
+color:white;
+}
+
+.btn-outline:hover{
+background:white;
+color:#05010d;
+}
+
+/* SECTIONS */
+
+section{
+padding:120px 10%;
+}
+
+.section-title{
+font-family:'Cinzel',serif;
+font-size:4rem;
+text-align:center;
+margin-bottom:30px;
+background:linear-gradient(90deg,#ffffff,#b26dff,#00e1ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.section-subtitle{
+text-align:center;
+max-width:850px;
+margin:0 auto 70px;
+line-height:2;
+color:#d3d3d3;
+font-size:1.1rem;
+}
+
+/* CARDS */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+padding:35px;
+border-radius:30px;
+transition:.5s;
+backdrop-filter:blur(15px);
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+width:180px;
+height:180px;
+background:radial-gradient(circle,#7b2fff55,transparent 70%);
+top:-50px;
+right:-50px;
+}
+
+.card:hover{
+transform:translateY(-12px);
+border-color:#00e1ff;
+box-shadow:
+0 0 30px rgba(0,225,255,.25),
+0 0 60px rgba(123,47,255,.15);
+}
+
+.card h3{
+font-size:1.8rem;
+margin-bottom:20px;
+color:#00e1ff;
+font-family:'Cinzel',serif;
+}
+
+.card p{
+line-height:1.9;
+color:#d9d9d9;
+}
+
+/* CHAKRAS */
+
+.chakras{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:70px;
+}
+
+.chakra{
+width:120px;
+height:120px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-weight:bold;
+text-align:center;
+padding:10px;
+animation:pulse 4s infinite;
+box-shadow:0 0 30px rgba(255,255,255,.15);
+cursor:pointer;
+transition:.4s;
+}
+
+.chakra:hover{
+transform:scale(1.12);
+box-shadow:
+0 0 25px rgba(255,255,255,.5),
+0 0 60px rgba(255,255,255,.3);
+}
+
+@keyframes pulse{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.08);
+}
+100%{
+transform:scale(1);
+}
+}
+
+.c1{background:#ff0000;}
+.c2{background:#ff7b00;}
+.c3{background:#ffd500;color:#111;}
+.c4{background:#00ff95;color:#111;}
+.c5{background:#00c3ff;}
+.c6{background:#6f00ff;}
+.c7{background:#ffffff;color:#111;}
+
+/* INFO DOS CHAKRAS */
+
+.chakra-info{
+margin-top:60px;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+padding:40px;
+border-radius:30px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+text-align:center;
+box-shadow:
+0 0 30px rgba(123,47,255,.15);
+transition:.3s;
+}
+
+.chakra-info h3{
+font-size:2rem;
+margin-bottom:20px;
+font-family:'Cinzel',serif;
+background:linear-gradient(90deg,#ffffff,#00e1ff,#b26dff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.chakra-info p{
+line-height:2;
+color:#ddd;
+font-size:1.05rem;
+}
+
+/* QUOTE */
+
+.quote{
+max-width:900px;
+margin:auto;
+text-align:center;
+font-size:2rem;
+line-height:1.8;
+font-family:'Cinzel',serif;
+color:#f2f2f2;
+padding:60px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+border-radius:35px;
+backdrop-filter:blur(15px);
+}
+
+/* FOOTER */
+
+footer{
+padding:50px 20px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+background:#05010d;
+}
+
+footer p{
+color:#aaa;
+line-height:2;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:3.5rem;
+}
+
+.section-title{
+font-size:2.7rem;
+}
+
+.quote{
+font-size:1.4rem;
+padding:40px 25px;
+}
+
+.chakra{
+width:90px;
+height:90px;
+font-size:.9rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="stars" id="stars"></div>
+
+<header>
+
+<div class="hero">
+
+<h1>
+Campos<br>
+Energéticos
+</h1>
+
+<p>
+Explore os mistérios invisíveis do universo, das vibrações espirituais,
+das frequências da consciência, dos chakras, da energia humana
+e das forças ocultas que conectam toda a existência.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#campos" class="btn btn-primary">
+Explorar
+</a>
+
+<a href="#chakras" class="btn btn-outline">
+Chakras
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+<section>
+
+<h2 class="section-title">
+O Que São Campos Energéticos?
+</h2>
+
+<p class="section-subtitle">
+Campos energéticos são estruturas invisíveis presentes em toda a realidade.
+Na ciência, aparecem como campos gravitacionais, eletromagnéticos e quânticos.
+Na espiritualidade, representam a aura, as vibrações emocionais,
+a consciência universal e a energia vital que conecta todos os seres.
+</p>
+
+</section>
+
+<section id="campos">
+
+<h2 class="section-title">
+Principais Campos
+</h2>
+
+<p class="section-subtitle">
+Cada frequência possui uma função diferente no universo e dentro do ser humano.
+Descubra algumas das energias mais estudadas na ciência e no misticismo.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Campo Eletromagnético</h3>
+<p>
+Responsável pela eletricidade, magnetismo e luz.
+Tudo que possui carga elétrica gera um campo invisível ao redor de si.
+O próprio coração humano produz um poderoso campo eletromagnético.
+</p>
+</div>
+
+<div class="card">
+<h3>Aura Humana</h3>
+<p>
+A aura é considerada um campo energético que envolve o corpo.
+Suas cores representam estados emocionais, espirituais e mentais,
+refletindo a vibração interna de cada pessoa.
+</p>
+</div>
+
+<div class="card">
+<h3>Campo Quântico</h3>
+<p>
+A física quântica sugere que toda matéria nasce de campos invisíveis.
+As partículas seriam apenas manifestações temporárias dessas energias fundamentais.
+</p>
+</div>
+
+<div class="card">
+<h3>Frequências Emocionais</h3>
+<p>
+Emoções possuem frequências vibracionais.
+Amor, paz e gratidão vibram em níveis elevados,
+enquanto medo e raiva possuem frequências mais densas.
+</p>
+</div>
+
+<div class="card">
+<h3>Consciência Universal</h3>
+<p>
+A ideia de que todas as consciências estão conectadas por uma rede energética universal,
+criando uma ligação invisível entre todos os seres vivos.
+</p>
+</div>
+
+<div class="card">
+<h3>Energia Espiritual</h3>
+<p>
+Diversas tradições acreditam em uma energia vital presente no universo:
+Chi, Prana, Mana e Força Vital são alguns dos nomes dados a essa energia ancestral.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CHAKRAS -->
 
 <section id="chakras">
 
@@ -17,7 +514,7 @@ Clique em cada chakra para descobrir seu significado.
 <div class="chakra c1"
 onclick="showChakra(
 'Chakra Raiz',
-'Localizado na base da coluna, o Chakra Raiz representa segurança, sobrevivência, estabilidade e conexão com a Terra. Quando equilibrado, traz sensação de proteção, força e firmeza emocional.'
+'Representa segurança, sobrevivência, estabilidade e conexão com a Terra. Quando equilibrado, traz sensação de proteção e firmeza emocional.'
 )">
 Raiz
 </div>
@@ -25,7 +522,7 @@ Raiz
 <div class="chakra c2"
 onclick="showChakra(
 'Chakra Sacral',
-'Relaciona-se às emoções, criatividade, prazer e energia emocional. Está ligado à expressão dos sentimentos, desejos, sensualidade e fluxo criativo da vida.'
+'Relaciona-se às emoções, criatividade, prazer e energia emocional. Está ligado à sensualidade e expressão dos sentimentos.'
 )">
 Sacral
 </div>
@@ -33,7 +530,7 @@ Sacral
 <div class="chakra c3"
 onclick="showChakra(
 'Chakra Plexo Solar',
-'É o centro do poder pessoal, autoestima e confiança. Quando equilibrado, desperta motivação, determinação e força interior.'
+'É o centro do poder pessoal, autoestima e confiança. Desperta motivação, coragem e força interior.'
 )">
 Plexo
 </div>
@@ -41,7 +538,7 @@ Plexo
 <div class="chakra c4"
 onclick="showChakra(
 'Chakra do Coração',
-'Representa amor, compaixão, conexão emocional e empatia. É considerado a ponte energética entre corpo, mente e espírito.'
+'Representa amor, compaixão, empatia e conexão emocional. É considerado a ponte energética entre corpo e espírito.'
 )">
 Coração
 </div>
@@ -49,7 +546,7 @@ Coração
 <div class="chakra c5"
 onclick="showChakra(
 'Chakra da Garganta',
-'Relacionado à comunicação, verdade e expressão pessoal. Ajuda na capacidade de falar com clareza e autenticidade.'
+'Relacionado à comunicação, verdade e expressão pessoal. Ajuda na clareza e autenticidade.'
 )">
 Garganta
 </div>
@@ -57,7 +554,7 @@ Garganta
 <div class="chakra c6"
 onclick="showChakra(
 'Chakra do Terceiro Olho',
-'Associado à intuição, percepção espiritual e consciência superior. Representa visão interior, sabedoria e expansão mental.'
+'Associado à intuição, percepção espiritual e consciência superior. Representa visão interior e sabedoria.'
 )">
 Terceiro Olho
 </div>
@@ -65,14 +562,12 @@ Terceiro Olho
 <div class="chakra c7"
 onclick="showChakra(
 'Chakra da Coroa',
-'É o chakra da conexão espiritual e da consciência universal. Relaciona-se ao despertar espiritual e à união com o universo.'
+'É o chakra da conexão espiritual e consciência universal. Relaciona-se ao despertar espiritual.'
 )">
 Coroa
 </div>
 
 </div>
-
-<!-- CAIXA DE INFORMAÇÃO -->
 
 <div class="chakra-info" id="chakraInfo">
 
@@ -81,10 +576,79 @@ Clique em um Chakra
 </h3>
 
 <p id="chakraText">
-Selecione um dos chakras acima para descobrir o significado espiritual,
-emocional e energético de cada centro vibracional.
+Selecione um chakra acima para descobrir seu significado energético.
 </p>
 
 </div>
 
 </section>
+
+<section>
+
+<div class="quote">
+“Tudo no universo é energia.
+Mude sua frequência e você mudará sua realidade.”
+</div>
+
+</section>
+
+<footer>
+
+<p>
+✨ Campos Energéticos • Universo Vibracional ✨
+</p>
+
+<p>
+Criado com estética mística, galáctica e espiritual.
+</p>
+
+</footer>
+
+<script>
+
+/* ESTRELAS */
+
+const stars = document.getElementById("stars");
+
+for(let i=0;i<150;i++){
+
+const star = document.createElement("div");
+
+star.classList.add("star");
+
+let size = Math.random()*3;
+
+star.style.width = size + "px";
+star.style.height = size + "px";
+
+star.style.left = Math.random()*100 + "vw";
+star.style.top = Math.random()*100 + "vh";
+
+star.style.animationDuration = (Math.random()*20+10)+"s";
+
+star.style.opacity = Math.random();
+
+stars.appendChild(star);
+
+}
+
+/* CHAKRAS */
+
+function showChakra(title, text){
+
+document.getElementById("chakraTitle").innerText = title;
+
+document.getElementById("chakraText").innerText = text;
+
+document.getElementById("chakraInfo").style.transform = "scale(0.97)";
+
+setTimeout(() => {
+document.getElementById("chakraInfo").style.transform = "scale(1)";
+},150);
+
+}
+
+</script>
+
+</body>
+</html>
